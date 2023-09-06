@@ -1,5 +1,7 @@
 ﻿using LoginApp.CORE.Abstract;
+using LoginApp.DAL.Context;
 using LoginApp.DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,39 +13,50 @@ namespace LoginApp.DAL.Concretes
 {
     public class BaseDAL<T> : IBaseDAL<T> where T : BaseLogin
     {
+        private readonly AppDbContext _context;
+        private DbSet<T> _table;
+
+        public BaseDAL(AppDbContext context)
+        {
+            this._context = context;
+            this._table=_context.Set<T>();
+        }
+
         public bool Any(Expression<Func<T, bool>> expression)
         {
-            return false;
+            return _table.Any(expression);
         }
 
         public void Create(T entity)
         {
-            throw new NotImplementedException();
+            _table.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
         public T GetDefault(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.FirstOrDefault(expression);
         }
 
         public T GetDefaultById(int id)
         {
-            throw new NotImplementedException();
+            return _table.Find(id);
         }
 
         public IList<T> GetDefaults(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _table.Where(expression).ToList();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _context.Entry<T>(entity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

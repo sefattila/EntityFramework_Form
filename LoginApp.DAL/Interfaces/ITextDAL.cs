@@ -10,6 +10,6 @@ namespace LoginApp.DAL.Interfaces
 {
     public interface ITextDAL : IBaseDAL<Text>
     {
-        IList<User> GetLastTen();
+        IList<Text> GetLastTen();
     }
 }

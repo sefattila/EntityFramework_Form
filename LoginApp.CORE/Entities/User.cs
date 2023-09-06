@@ -18,7 +18,7 @@ namespace LoginApp.CORE.Entities
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public Account Acoount { get; set; } = Account.User;
+        public Account Account { get; set; } = Account.User;
 
         public ICollection<Text> Texts { get; set; }
     }

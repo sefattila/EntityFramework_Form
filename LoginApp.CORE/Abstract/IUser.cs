@@ -13,6 +13,6 @@ namespace LoginApp.CORE.Abstract
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public Account Acoount { get; set; } 
+        public Account Account { get; set; } 
     }
 }

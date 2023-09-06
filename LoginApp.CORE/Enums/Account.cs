@@ -8,6 +8,6 @@ namespace LoginApp.CORE.Enums
 {
     public enum Account
     {
-        Admin,User
+        Admin,User,PassiveUser
     }
 }
