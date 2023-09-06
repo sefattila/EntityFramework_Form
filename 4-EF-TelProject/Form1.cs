@@ -1,3 +1,4 @@
+using _4_EF_TelProject.Utilities;
 using TelProject.BLL.Services;
 using TelProject.DATA.Entities;
 
@@ -17,7 +18,7 @@ namespace _4_EF_TelProject
         {
             List<Person> persons = personServices.GetActive();
             FillList(persons);
-            ButtonsSetting(false);
+            ButtonsSetting(true);
         }
 
         private void FillList(List<Person> persons)
@@ -61,18 +62,18 @@ namespace _4_EF_TelProject
             }
             else
             {
-                ClearText();
+                Helper.Clear(this.Controls);
                 person = null;
                 ButtonsSetting(true);
             }
         }
 
-        private void ClearText()
-        {
-            txtAd.Clear();
-            txtSoyad.Clear();
-            mtxtTelefon.Clear();
-        }
+        //private void ClearText()
+        //{
+        //    txtAd.Clear();
+        //    txtSoyad.Clear();
+        //    mtxtTelefon.Clear();
+        //}
 
         private void ButtonsSetting(bool set)
         {
@@ -91,7 +92,7 @@ namespace _4_EF_TelProject
                 personServices.Update(person);
                 FillList(personServices.GetActive());
                 ButtonsSetting(true);
-                ClearText();
+                Helper.Clear(this.Controls);
                 person = null;
             }
         }
@@ -103,7 +104,7 @@ namespace _4_EF_TelProject
                 person = personServices.Get(person.Id);
                 personServices.Delete(person);
                 ButtonsSetting(true);
-                ClearText();
+                Helper.Clear(this.Controls);
                 FillList(personServices.GetActive());
             }
         }
@@ -117,6 +118,23 @@ namespace _4_EF_TelProject
                 form2.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void linkYoneticiEkrani_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+            this.Show();
+        }
+
+        private void txtKisiAra_TextChanged(object sender, EventArgs e)
+        {
+            string word = txtKisiAra.Text.ToLower();
+            List<Person> persons = personServices.GetActive();
+            List<Person> filteredPerson = persons.Where(a => a.FirstName.ToLower().Contains(word) || a.FirstName.ToLower().Contains(word)).ToList();
+
+            FillList(filteredPerson);
         }
     }
 }

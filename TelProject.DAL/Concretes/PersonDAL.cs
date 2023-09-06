@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,13 @@ namespace TelProject.DAL.Concretes
 
         public List<Person> GetActive()
         {
-            return _dbContext.People.Where(a => a.Status != Status.Passive).ToList();
+            //return _dbContext.People.Include(a=>a.Addresses).Where(a => a.Status != Status.Passive).ToList(); //eager loading
+            //3. bi tablo için theninclude
+            return _dbContext.People.Where(a => a.Status != Status.Passive).ToList(); //lazy loading
+
+            //eager loading
+            //lazy loading
+            //Explicit
         }
     }
 }

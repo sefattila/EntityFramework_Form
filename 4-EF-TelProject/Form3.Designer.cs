@@ -33,9 +33,9 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.lboxKisiler = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lvKisiler = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // txtAra
@@ -77,16 +77,6 @@
             this.columnHeader3.Text = "Adres Detay";
             this.columnHeader3.Width = 400;
             // 
-            // lboxKisiler
-            // 
-            this.lboxKisiler.FormattingEnabled = true;
-            this.lboxKisiler.ItemHeight = 15;
-            this.lboxKisiler.Location = new System.Drawing.Point(12, 42);
-            this.lboxKisiler.Margin = new System.Windows.Forms.Padding(2);
-            this.lboxKisiler.Name = "lboxKisiler";
-            this.lboxKisiler.Size = new System.Drawing.Size(178, 244);
-            this.lboxKisiler.TabIndex = 11;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -107,18 +97,29 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Yönetici Ekranı";
             // 
+            // lvKisiler
+            // 
+            this.lvKisiler.Location = new System.Drawing.Point(12, 42);
+            this.lvKisiler.Name = "lvKisiler";
+            this.lvKisiler.Size = new System.Drawing.Size(185, 244);
+            this.lvKisiler.TabIndex = 15;
+            this.lvKisiler.UseCompatibleStateImageBehavior = false;
+            this.lvKisiler.View = System.Windows.Forms.View.List;
+            this.lvKisiler.SelectedIndexChanged += new System.EventHandler(this.lvKisiler_SelectedIndexChanged);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 317);
+            this.Controls.Add(this.lvKisiler);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.lvAdresler);
-            this.Controls.Add(this.lboxKisiler);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,8 +132,8 @@
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
-        private ListBox lboxKisiler;
         private Label label2;
         private Label label1;
+        private ListView lvKisiler;
     }
 }

@@ -1,0 +1,12 @@
+﻿Bir not uyulaması yapacağız. Burada kullanıcılar sisteme kayıt olduktan sonra
+giriş yapıp notlarını yazabilecekler.
+1- Kullanıcı kayıt olurken ad,soyad, kullanıcı adı ve şifresiyle kayıt oluyor.
+2- Sisteme giriş yaparken kullanıcı adı ve şifreyle giriş yapılıyor.
+2- Şifre en az 6 karakter olmak zorunda ve en az bir özel karakter ve bir rakam
+içermek zorunda.
+3- Kullanıcılar kayıt olduktan sonra Admin hesabı aktif hale getirebiliyor.
+Eğer Kullanıcının hesabı aktifleştirilmediyse kullanıcı giriş yapamıyor.
+4- Kullanıcılar notları ekleyip, silip, güncelleyebiliyor.
+5- Notların başlığı ve içeriği var.
+6- Kullanıcılar giriş yaptıktan sonra şifrelerini değiştirebiliyor.
+7- Admin son yazılan 10 notu görüntüleyebiliyor.

@@ -34,6 +34,9 @@
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
@@ -46,11 +49,8 @@
             this.linkYoneticiEkrani = new System.Windows.Forms.LinkLabel();
             this.txtKisiAra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvKisiler
@@ -90,6 +90,28 @@
             // 
             this.columnHeader4.Text = "TELEFON";
             this.columnHeader4.Width = 300;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem,
+            this.adresToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 48);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // adresToolStripMenuItem
+            // 
+            this.adresToolStripMenuItem.Name = "adresToolStripMenuItem";
+            this.adresToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.adresToolStripMenuItem.Text = "Adres";
+            this.adresToolStripMenuItem.Click += new System.EventHandler(this.adresToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -197,6 +219,7 @@
             this.linkYoneticiEkrani.TabIndex = 11;
             this.linkYoneticiEkrani.TabStop = true;
             this.linkYoneticiEkrani.Text = "Yönetici Ekranı";
+            this.linkYoneticiEkrani.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkYoneticiEkrani_LinkClicked);
             // 
             // txtKisiAra
             // 
@@ -205,6 +228,7 @@
             this.txtKisiAra.Name = "txtKisiAra";
             this.txtKisiAra.Size = new System.Drawing.Size(145, 23);
             this.txtKisiAra.TabIndex = 10;
+            this.txtKisiAra.TextChanged += new System.EventHandler(this.txtKisiAra_TextChanged);
             // 
             // label4
             // 
@@ -215,28 +239,6 @@
             this.label4.Size = new System.Drawing.Size(46, 15);
             this.label4.TabIndex = 12;
             this.label4.Text = "Kişi Ara";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem,
-            this.adresToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // adresToolStripMenuItem
-            // 
-            this.adresToolStripMenuItem.Name = "adresToolStripMenuItem";
-            this.adresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.adresToolStripMenuItem.Text = "Adres";
-            this.adresToolStripMenuItem.Click += new System.EventHandler(this.adresToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -251,9 +253,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -62,6 +62,7 @@
             this.lvAdresler.TabIndex = 5;
             this.lvAdresler.UseCompatibleStateImageBehavior = false;
             this.lvAdresler.View = System.Windows.Forms.View.Details;
+            this.lvAdresler.SelectedIndexChanged += new System.EventHandler(this.lvAdresler_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -112,6 +113,7 @@
             this.btnSil.TabIndex = 5;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -122,6 +124,7 @@
             this.btnGuncelle.TabIndex = 4;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnKaydet
             // 
@@ -132,6 +135,7 @@
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtAdresDetay
             // 
