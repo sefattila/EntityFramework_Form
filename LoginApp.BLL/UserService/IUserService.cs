@@ -10,15 +10,18 @@ namespace LoginApp.BLL.UserService
 {
     public interface IUserService
     {
-        void Create(User entity);
-        void Update(User entity);
-        void Delete(User entity);
-        bool Any(Expression<Func<User, bool>> expression);
-        User GetDefault(Expression<Func<User, bool>> expression);
-        User GetDefaultById(int id);
-        IList<User> GetDefaults(Expression<Func<User, bool>> expression);
+        void Create(Users entity);
+        void Update(Users entity);
+        void Delete(Users entity);
+        bool Any(Expression<Func<Users, bool>> expression);
+        Users GetDefault(Expression<Func<Users, bool>> expression);
+        Users GetDefaultById(int id);
+        IList<Users> GetDefaults(Expression<Func<Users, bool>> expression);
         //...
 
-        IList<User> GetPassive();
+        IList<Users> GetPassive();
+        //..
+
+        Users GetUser(string username,string password);
     }
 }

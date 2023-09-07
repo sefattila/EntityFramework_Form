@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace LoginApp.DAL.Mapping
 {
-    public class UserMapping : IEntityTypeConfiguration<User>
+    public class UserMapping : IEntityTypeConfiguration<Users>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Users> builder)
         {
             builder.Property(x => x.FirstName)
                  .HasColumnType("nvarchar")

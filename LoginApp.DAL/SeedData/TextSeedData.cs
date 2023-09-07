@@ -15,7 +15,7 @@ namespace LoginApp.DAL.SeedData
         {
             builder.HasData(
                 new Text() { Id = 1, Title = "Dene", TextDetail = "DenemeDeneme", UserId = 2 },
-                new Text() { Id = 1, Title = "Kulüp", TextDetail = "Beşiktaş", UserId = 3 }
+                new Text() { Id = 2, Title = "Kulüp", TextDetail = "Beşiktaş", UserId = 3 }
                 );
         }
     }

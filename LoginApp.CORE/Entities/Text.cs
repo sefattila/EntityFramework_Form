@@ -17,6 +17,6 @@ namespace LoginApp.CORE.Entities
         public string TextDetail { get; set; }
         public int UserId { get; set; }
 
-        public User User { get; set; }
+        public Users User { get; set; }
     }
 }

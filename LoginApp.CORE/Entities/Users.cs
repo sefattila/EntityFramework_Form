@@ -8,17 +8,13 @@ using System.Threading.Tasks;
 
 namespace LoginApp.CORE.Entities
 {
-    public class User : BaseLogin, IUser
+    public class Users : BaseLogin, IUser
     {
-        public User()
-        {
-            base.Status = Status.Passive;
-        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public Account Account { get; set; } = Account.User;
+        public Account Account { get; set; } = Account.PassiveUser;
 
         public ICollection<Text> Texts { get; set; }
     }

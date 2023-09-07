@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace LoginApp.DAL.SeedData
 {
-    public class UserSeedData : IEntityTypeConfiguration<User>
+    public class UserSeedData : IEntityTypeConfiguration<Users>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Users> builder)
         {
             builder.HasData(
-               new User() { Id = 1, FirstName = "Ali", LastName = "Gündüz", UserName = "agunduz", Password = "a.gunduz1", Account = Account.Admin },
-               new User() { Id = 2, FirstName = "Emrah", LastName = "Yaşar", UserName = "eyasar", Password = "e.yasar1" },
-               new User() { Id = 3, FirstName = "Savaş", LastName = "Kurt", UserName = "skurt", Password = "savas.kurt1903" }
+               new Users() { Id = 1, FirstName = "Ali", LastName = "Gündüz", UserName = "agunduz", Password = "a.gunduz1", Account = Account.Admin },
+               new Users() { Id = 2, FirstName = "Emrah", LastName = "Yaşar", UserName = "eyasar", Password = "e.yasar1" },
+               new Users() { Id = 3, FirstName = "Savaş", LastName = "Kurt", UserName = "skurt", Password = "savas.kurt1903" }
                );
         }
     }

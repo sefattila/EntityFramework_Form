@@ -19,7 +19,7 @@ namespace LoginApp.DAL.Concretes
         public BaseDAL(AppDbContext context)
         {
             this._context = context;
-            this._table=_context.Set<T>();
+            this._table=context.Set<T>();
         }
 
         public bool Any(Expression<Func<T, bool>> expression)

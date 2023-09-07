@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace LoginApp.DAL.Interfaces
 {
-    public interface IUserDAL : IBaseDAL<User>
+    public interface IUserDAL : IBaseDAL<Users>
     {
-        IList<User> GetPassive();
+        IList<Users> GetPassive();
     }
 }
