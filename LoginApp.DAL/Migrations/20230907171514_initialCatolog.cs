@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LoginApp.DAL.Migrations
 {
-    public partial class init3 : Migration
+    public partial class initialCatolog : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -58,27 +58,27 @@ namespace LoginApp.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Account", "CreateDate", "DeleteDate", "FirstName", "LastName", "Password", "Status", "UpdateDate", "UserName" },
-                values: new object[] { 1, 0, new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9665), null, "Ali", "Gündüz", "a.gunduz1", 2, null, "agunduz" });
+                values: new object[] { 1, 0, new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9299), null, "Ali", "Gündüz", "a.gunduz1", 0, null, "agunduz" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Account", "CreateDate", "DeleteDate", "FirstName", "LastName", "Password", "Status", "UpdateDate", "UserName" },
-                values: new object[] { 2, 1, new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9680), null, "Emrah", "Yaşar", "e.yasar1", 2, null, "eyasar" });
+                values: new object[] { 2, 2, new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9311), null, "Emrah", "Yaşar", "e.yasar1", 0, null, "eyasar" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Account", "CreateDate", "DeleteDate", "FirstName", "LastName", "Password", "Status", "UpdateDate", "UserName" },
-                values: new object[] { 3, 1, new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9683), null, "Savaş", "Kurt", "savas.kurt1903", 2, null, "skurt" });
+                values: new object[] { 3, 2, new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9312), null, "Savaş", "Kurt", "savas.kurt1903", 0, null, "skurt" });
 
             migrationBuilder.InsertData(
                 table: "Texts",
                 columns: new[] { "Id", "CreateDate", "DeleteDate", "Status", "TextDetail", "Title", "UpdateDate", "UserId" },
-                values: new object[] { 1, new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9872), null, 0, "DenemeDeneme", "Dene", null, 2 });
+                values: new object[] { 1, new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9426), null, 0, "DenemeDeneme", "Dene", null, 2 });
 
             migrationBuilder.InsertData(
                 table: "Texts",
                 columns: new[] { "Id", "CreateDate", "DeleteDate", "Status", "TextDetail", "Title", "UpdateDate", "UserId" },
-                values: new object[] { 2, new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9877), null, 0, "Beşiktaş", "Kulüp", null, 3 });
+                values: new object[] { 2, new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9428), null, 0, "Beşiktaş", "Kulüp", null, 3 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Texts_UserId",

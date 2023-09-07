@@ -27,13 +27,12 @@ namespace LoginApp.BLL.UserService
 
         public void Create(Users entity)
         {
-            string format = @"^[a-zA-Z0-9]+$";
-            bool isAnyNumber = entity.Password.Any(char.IsDigit);
-            bool isAllCharOrDigit = !entity.Password.All(char.IsLetterOrDigit);
-            bool isAnyLetter = entity.Password.Any(char.IsLetter);
+            //bool isAnyNumber = entity.Password.Any(char.IsDigit);
+            //bool isAllCharOrDigit = !entity.Password.All(char.IsLetterOrDigit);
+            //bool isAnyLetter = entity.Password.Any(char.IsLetter);
             if (!Any(x => x.UserName.ToLower() == entity.UserName.ToLower()))
             {
-                if (isAnyLetter && isAllCharOrDigit && isAnyNumber && entity.Password.Length > 6)
+                if (PasswordControl(entity.Password))
                     _repo.Create(entity);
                 else throw new Exception("Şifre Özel Karakter, Sayı İçermeli ve 6 Karakterden Fazla Olmalı");
             }
@@ -91,6 +90,17 @@ namespace LoginApp.BLL.UserService
             return _user;
         }
 
+        public bool PasswordControl(string password)
+        {
+            bool isAnyNumber = password.Any(char.IsDigit);
+            bool isAllCharOrDigit = !password.All(char.IsLetterOrDigit);
+            bool isAnyLetter = password.Any(char.IsLetter);
+            if(isAnyLetter && isAllCharOrDigit && isAnyNumber && password.Length > 6)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public void Update(Users entity)
         {

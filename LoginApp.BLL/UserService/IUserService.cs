@@ -23,5 +23,6 @@ namespace LoginApp.BLL.UserService
         //..
 
         Users GetUser(string username,string password);
+        bool PasswordControl(string password);
     }
 }

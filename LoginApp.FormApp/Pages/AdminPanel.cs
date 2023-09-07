@@ -1,6 +1,7 @@
 ﻿using LoginApp.BLL.TextService;
 using LoginApp.BLL.UserService;
 using LoginApp.CORE.Entities;
+using LoginApp.CORE.Enums;
 using LoginApp.DAL.Concretes;
 using LoginApp.DAL.Context;
 using LoginApp.DAL.Interfaces;
@@ -82,12 +83,33 @@ namespace LoginApp.FormApp.Pages
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult result=MessageBox.Show("Çıkış Yapmaya Emin Misin","Uygulama Çıkış",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Çıkış Yapmaya Emin Misin", "Uygulama Çıkış", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
                 _user = null;
                 this.Close();
+            }
+            else return;
+        }
+
+        private void lvPassive_DoubleClick(object sender, EventArgs e)
+        {
+            int id=0;
+            if(lvPassive.SelectedItems.Count > 0)
+            {
+                id = Convert.ToInt32(lvPassive.SelectedItems[0].SubItems[0].Text);
+            }
+            Users selectedUser = new Users();
+            selectedUser = _userService.GetDefaultById(id);
+
+            DialogResult result = MessageBox.Show("Kullanıcı Aktifleştirilsin Mi?", "Kullanıcı Aktifleştir", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                selectedUser.Account = Account.User;
+                _userService.Update(selectedUser);
+                PassiveUsersFill(_userService.GetPassive());
             }
             else return;
         }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoginApp.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230907071619_init3")]
-    partial class init3
+    [Migration("20230907171514_initialCatolog")]
+    partial class initialCatolog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,7 +66,7 @@ namespace LoginApp.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9872),
+                            CreateDate = new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9426),
                             Status = 0,
                             TextDetail = "DenemeDeneme",
                             Title = "Dene",
@@ -75,7 +75,7 @@ namespace LoginApp.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreateDate = new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9877),
+                            CreateDate = new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9428),
                             Status = 0,
                             TextDetail = "Beşiktaş",
                             Title = "Kulüp",
@@ -136,33 +136,33 @@ namespace LoginApp.DAL.Migrations
                         {
                             Id = 1,
                             Account = 0,
-                            CreateDate = new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9665),
+                            CreateDate = new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9299),
                             FirstName = "Ali",
                             LastName = "Gündüz",
                             Password = "a.gunduz1",
-                            Status = 2,
+                            Status = 0,
                             UserName = "agunduz"
                         },
                         new
                         {
                             Id = 2,
-                            Account = 1,
-                            CreateDate = new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9680),
+                            Account = 2,
+                            CreateDate = new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9311),
                             FirstName = "Emrah",
                             LastName = "Yaşar",
                             Password = "e.yasar1",
-                            Status = 2,
+                            Status = 0,
                             UserName = "eyasar"
                         },
                         new
                         {
                             Id = 3,
-                            Account = 1,
-                            CreateDate = new DateTime(2023, 9, 7, 10, 16, 19, 552, DateTimeKind.Local).AddTicks(9683),
+                            Account = 2,
+                            CreateDate = new DateTime(2023, 9, 7, 20, 15, 14, 53, DateTimeKind.Local).AddTicks(9312),
                             FirstName = "Savaş",
                             LastName = "Kurt",
                             Password = "savas.kurt1903",
-                            Status = 2,
+                            Status = 0,
                             UserName = "skurt"
                         });
                 });

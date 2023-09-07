@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            btnAdd = new Button();
-            btnUpdate = new Button();
             btnDelete = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            rtDetail = new RichTextBox();
+            txtTitle = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
             lvTexts = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -50,8 +50,8 @@
             groupBox1.Controls.Add(btnDelete);
             groupBox1.Controls.Add(btnUpdate);
             groupBox1.Controls.Add(btnAdd);
-            groupBox1.Controls.Add(richTextBox1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(rtDetail);
+            groupBox1.Controls.Add(txtTitle);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Dock = DockStyle.Top;
@@ -63,15 +63,51 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Kullanıcı Paneli";
             // 
-            // label1
+            // btnDelete
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Başlık";
+            btnDelete.Location = new Point(304, 136);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(134, 40);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Sil";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(304, 90);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(134, 40);
+            btnUpdate.TabIndex = 3;
+            btnUpdate.Text = "Güncelle";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(304, 44);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(134, 40);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Kaydet";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // rtDetail
+            // 
+            rtDetail.Location = new Point(68, 75);
+            rtDetail.Name = "rtDetail";
+            rtDetail.Size = new Size(190, 123);
+            rtDetail.TabIndex = 2;
+            rtDetail.Text = "";
+            // 
+            // txtTitle
+            // 
+            txtTitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTitle.Location = new Point(68, 44);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(190, 25);
+            txtTitle.TabIndex = 1;
             // 
             // label2
             // 
@@ -83,48 +119,15 @@
             label2.TabIndex = 0;
             label2.Text = "Not";
             // 
-            // textBox1
+            // label1
             // 
-            textBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(68, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 25);
-            textBox1.TabIndex = 1;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(68, 75);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(190, 123);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(304, 44);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(134, 40);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Kaydet";
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Location = new Point(304, 90);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(134, 40);
-            btnUpdate.TabIndex = 3;
-            btnUpdate.Text = "Güncelle";
-            btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Location = new Point(304, 136);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(134, 40);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Sil";
-            btnDelete.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Başlık";
             // 
             // lvTexts
             // 
@@ -138,6 +141,8 @@
             lvTexts.TabIndex = 1;
             lvTexts.UseCompatibleStateImageBehavior = false;
             lvTexts.View = View.Details;
+            lvTexts.SelectedIndexChanged += lvTexts_SelectedIndexChanged;
+            lvTexts.DoubleClick += lvTexts_DoubleClick;
             // 
             // columnHeader1
             // 
@@ -162,6 +167,7 @@
             btnChangePassword.TabIndex = 3;
             btnChangePassword.Text = "Şifremi Değiştir";
             btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.Click += btnChangePassword_Click;
             // 
             // btnLogOut
             // 
@@ -172,6 +178,7 @@
             btnLogOut.TabIndex = 3;
             btnLogOut.Text = "Çıkış Yap";
             btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // UserPanel
             // 
@@ -184,6 +191,7 @@
             Controls.Add(groupBox1);
             Name = "UserPanel";
             Text = "UserPanel";
+            Load += UserPanel_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -192,8 +200,8 @@
         #endregion
 
         private GroupBox groupBox1;
-        private RichTextBox richTextBox1;
-        private TextBox textBox1;
+        private RichTextBox rtDetail;
+        private TextBox txtTitle;
         private Label label2;
         private Label label1;
         private Button btnDelete;
