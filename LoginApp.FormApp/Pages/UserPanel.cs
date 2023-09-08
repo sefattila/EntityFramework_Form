@@ -98,8 +98,8 @@ namespace LoginApp.FormApp.Pages
             {
                 int id = Convert.ToInt32(lvTexts.SelectedItems[0].SubItems[0].Text);
                 _text = _textService.GetDefaultById(id);
-                _text.Title = txtTitle.Text;
-                _text.TextDetail = rtDetail.Text;
+                txtTitle.Text = _text.Title;
+                rtDetail.Text = _text.TextDetail;
                 ButtonSettings(false);
             }
             else

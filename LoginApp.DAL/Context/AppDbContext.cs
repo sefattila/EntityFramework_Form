@@ -16,8 +16,8 @@ namespace LoginApp.DAL.Context
         public DbSet<Text> Texts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=LoginDB;Trusted_Connection=True;");
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=LoginDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=LoginDB;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=LoginDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

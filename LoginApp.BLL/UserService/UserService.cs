@@ -72,7 +72,7 @@ namespace LoginApp.BLL.UserService
 
         public Users GetUser(string username, string password)
         {
-            Users _user = _repo.GetDefault(x => x.UserName == username && x.Status == Status.Active);
+            Users _user = _repo.GetDefault(x => x.UserName == username && x.Status != Status.Passive);
             if (_user == null)
             {
                 throw new Exception("Böyle Bir Kullanıcı Yok veya Silnmiş Hesap");

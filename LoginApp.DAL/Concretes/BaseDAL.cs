@@ -55,7 +55,8 @@ namespace LoginApp.DAL.Concretes
 
         public void Update(T entity)
         {
-            _context.Entry<T>(entity).State = EntityState.Modified;
+            //_context.Entry<T>(entity).State = EntityState.Modified;
+            _table.Update(entity);
             _context.SaveChanges();
         }
     }
