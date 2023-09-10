@@ -57,27 +57,27 @@ namespace TelProject.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "People",
                 columns: new[] { "Id", "CreateDate", "DeletedDate", "FirstName", "LastName", "ModifiedDate", "Phone", "Status" },
-                values: new object[] { 1, new DateTime(2023, 9, 5, 10, 0, 34, 801, DateTimeKind.Local).AddTicks(9776), null, "Sefa", "Attila", null, "552 828 1903", 0 });
+                values: new object[] { 1, new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(315), null, "Sefa", "Attila", null, "552 828 1903", 0 });
 
             migrationBuilder.InsertData(
                 table: "People",
                 columns: new[] { "Id", "CreateDate", "DeletedDate", "FirstName", "LastName", "ModifiedDate", "Phone", "Status" },
-                values: new object[] { 2, new DateTime(2023, 9, 5, 10, 0, 34, 801, DateTimeKind.Local).AddTicks(9789), null, "Ahmet", "Yılmaz", null, "552 828 1903", 0 });
+                values: new object[] { 2, new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(323), null, "Ahmet", "Yılmaz", null, "552 828 1903", 0 });
 
             migrationBuilder.InsertData(
                 table: "Addresses",
                 columns: new[] { "Id", "AddressDetail", "City", "CreateDate", "DeletedDate", "ModifiedDate", "PersonId", "Status", "Town" },
-                values: new object[] { 1, "YeşilYurt", "Kastamonu", new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(234), null, null, 1, 0, "Tosya" });
+                values: new object[] { 1, "YeşilYurt", "Kastamonu", new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(567), null, null, 1, 0, "Tosya" });
 
             migrationBuilder.InsertData(
                 table: "Addresses",
                 columns: new[] { "Id", "AddressDetail", "City", "CreateDate", "DeletedDate", "ModifiedDate", "PersonId", "Status", "Town" },
-                values: new object[] { 2, "Karanfil", "Ankara", new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(239), null, null, 1, 0, "Gölbaşı" });
+                values: new object[] { 2, "Karanfil", "Ankara", new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(570), null, null, 1, 0, "Gölbaşı" });
 
             migrationBuilder.InsertData(
                 table: "Addresses",
                 columns: new[] { "Id", "AddressDetail", "City", "CreateDate", "DeletedDate", "ModifiedDate", "PersonId", "Status", "Town" },
-                values: new object[] { 3, "Taşyaka", "Muğla", new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(241), null, null, 2, 0, "Fethiye" });
+                values: new object[] { 3, "Taşyaka", "Muğla", new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(571), null, null, 2, 0, "Fethiye" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_PersonId",

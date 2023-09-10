@@ -28,237 +28,267 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lvKisiler = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.mtxtTelefon = new System.Windows.Forms.MaskedTextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkYoneticiEkrani = new System.Windows.Forms.LinkLabel();
-            this.txtKisiAra = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            lvKisiler = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            silToolStripMenuItem = new ToolStripMenuItem();
+            adresToolStripMenuItem = new ToolStripMenuItem();
+            groupBox1 = new GroupBox();
+            btnGuncelle = new Button();
+            btnKaydet = new Button();
+            mtxtTelefon = new MaskedTextBox();
+            txtSoyad = new TextBox();
+            txtAd = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            linkYoneticiEkrani = new LinkLabel();
+            txtKisiAra = new TextBox();
+            label4 = new Label();
+            dgvKisi = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
+            contextMenuStrip1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKisi).BeginInit();
+            SuspendLayout();
             // 
             // lvKisiler
             // 
-            this.lvKisiler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvKisiler.ContextMenuStrip = this.contextMenuStrip1;
-            this.lvKisiler.FullRowSelect = true;
-            this.lvKisiler.GridLines = true;
-            this.lvKisiler.Location = new System.Drawing.Point(11, 230);
-            this.lvKisiler.Margin = new System.Windows.Forms.Padding(2);
-            this.lvKisiler.Name = "lvKisiler";
-            this.lvKisiler.Size = new System.Drawing.Size(704, 138);
-            this.lvKisiler.TabIndex = 13;
-            this.lvKisiler.UseCompatibleStateImageBehavior = false;
-            this.lvKisiler.View = System.Windows.Forms.View.Details;
-            this.lvKisiler.SelectedIndexChanged += new System.EventHandler(this.lvKisiler_SelectedIndexChanged);
+            lvKisiler.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lvKisiler.ContextMenuStrip = contextMenuStrip1;
+            lvKisiler.FullRowSelect = true;
+            lvKisiler.GridLines = true;
+            lvKisiler.Location = new Point(11, 230);
+            lvKisiler.Margin = new Padding(2);
+            lvKisiler.Name = "lvKisiler";
+            lvKisiler.Size = new Size(704, 138);
+            lvKisiler.TabIndex = 13;
+            lvKisiler.UseCompatibleStateImageBehavior = false;
+            lvKisiler.View = View.Details;
+            lvKisiler.SelectedIndexChanged += lvKisiler_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID";
+            columnHeader1.Text = "ID";
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "AD";
-            this.columnHeader2.Width = 200;
+            columnHeader2.Text = "AD";
+            columnHeader2.Width = 200;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "SOYAD";
-            this.columnHeader3.Width = 200;
+            columnHeader3.Text = "SOYAD";
+            columnHeader3.Width = 200;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "TELEFON";
-            this.columnHeader4.Width = 300;
+            columnHeader4.Text = "TELEFON";
+            columnHeader4.Width = 300;
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem,
-            this.adresToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 48);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { silToolStripMenuItem, adresToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(105, 48);
             // 
             // silToolStripMenuItem
             // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            silToolStripMenuItem.Name = "silToolStripMenuItem";
+            silToolStripMenuItem.Size = new Size(104, 22);
+            silToolStripMenuItem.Text = "Sil";
+            silToolStripMenuItem.Click += silToolStripMenuItem_Click;
             // 
             // adresToolStripMenuItem
             // 
-            this.adresToolStripMenuItem.Name = "adresToolStripMenuItem";
-            this.adresToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.adresToolStripMenuItem.Text = "Adres";
-            this.adresToolStripMenuItem.Click += new System.EventHandler(this.adresToolStripMenuItem_Click);
+            adresToolStripMenuItem.Name = "adresToolStripMenuItem";
+            adresToolStripMenuItem.Size = new Size(104, 22);
+            adresToolStripMenuItem.Text = "Adres";
+            adresToolStripMenuItem.Click += adresToolStripMenuItem_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnGuncelle);
-            this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Controls.Add(this.mtxtTelefon);
-            this.groupBox1.Controls.Add(this.txtSoyad);
-            this.groupBox1.Controls.Add(this.txtAd);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(11, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(298, 205);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kişi Ekleme Ekranı";
+            groupBox1.Controls.Add(btnGuncelle);
+            groupBox1.Controls.Add(btnKaydet);
+            groupBox1.Controls.Add(mtxtTelefon);
+            groupBox1.Controls.Add(txtSoyad);
+            groupBox1.Controls.Add(txtAd);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(11, 13);
+            groupBox1.Margin = new Padding(2);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(2);
+            groupBox1.Size = new Size(298, 205);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Kişi Ekleme Ekranı";
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(162, 151);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(96, 32);
-            this.btnGuncelle.TabIndex = 4;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            btnGuncelle.Location = new Point(162, 151);
+            btnGuncelle.Margin = new Padding(2);
+            btnGuncelle.Name = "btnGuncelle";
+            btnGuncelle.Size = new Size(96, 32);
+            btnGuncelle.TabIndex = 4;
+            btnGuncelle.Text = "Güncelle";
+            btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(23, 151);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(96, 32);
-            this.btnKaydet.TabIndex = 3;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            btnKaydet.Location = new Point(23, 151);
+            btnKaydet.Margin = new Padding(2);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(96, 32);
+            btnKaydet.TabIndex = 3;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // mtxtTelefon
             // 
-            this.mtxtTelefon.Location = new System.Drawing.Point(114, 110);
-            this.mtxtTelefon.Margin = new System.Windows.Forms.Padding(2);
-            this.mtxtTelefon.Mask = "(999) 000-00-00";
-            this.mtxtTelefon.Name = "mtxtTelefon";
-            this.mtxtTelefon.Size = new System.Drawing.Size(145, 23);
-            this.mtxtTelefon.TabIndex = 2;
+            mtxtTelefon.Location = new Point(114, 110);
+            mtxtTelefon.Margin = new Padding(2);
+            mtxtTelefon.Mask = "(999) 000-00-00";
+            mtxtTelefon.Name = "mtxtTelefon";
+            mtxtTelefon.Size = new Size(145, 23);
+            mtxtTelefon.TabIndex = 2;
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(114, 71);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(145, 23);
-            this.txtSoyad.TabIndex = 1;
+            txtSoyad.Location = new Point(114, 71);
+            txtSoyad.Margin = new Padding(2);
+            txtSoyad.Name = "txtSoyad";
+            txtSoyad.Size = new Size(145, 23);
+            txtSoyad.TabIndex = 1;
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(114, 34);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(145, 23);
-            this.txtAd.TabIndex = 0;
+            txtAd.Location = new Point(114, 34);
+            txtAd.Margin = new Padding(2);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(145, 23);
+            txtAd.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 109);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Telefon";
+            label3.AutoSize = true;
+            label3.Location = new Point(22, 109);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Telefon";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 70);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Soyad";
+            label2.AutoSize = true;
+            label2.Location = new Point(22, 70);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Soyad";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ad";
+            label1.AutoSize = true;
+            label1.Location = new Point(22, 33);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Ad";
             // 
             // linkYoneticiEkrani
             // 
-            this.linkYoneticiEkrani.AutoSize = true;
-            this.linkYoneticiEkrani.Location = new System.Drawing.Point(349, 51);
-            this.linkYoneticiEkrani.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkYoneticiEkrani.Name = "linkYoneticiEkrani";
-            this.linkYoneticiEkrani.Size = new System.Drawing.Size(84, 15);
-            this.linkYoneticiEkrani.TabIndex = 11;
-            this.linkYoneticiEkrani.TabStop = true;
-            this.linkYoneticiEkrani.Text = "Yönetici Ekranı";
-            this.linkYoneticiEkrani.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkYoneticiEkrani_LinkClicked);
+            linkYoneticiEkrani.AutoSize = true;
+            linkYoneticiEkrani.Location = new Point(349, 51);
+            linkYoneticiEkrani.Margin = new Padding(2, 0, 2, 0);
+            linkYoneticiEkrani.Name = "linkYoneticiEkrani";
+            linkYoneticiEkrani.Size = new Size(84, 15);
+            linkYoneticiEkrani.TabIndex = 11;
+            linkYoneticiEkrani.TabStop = true;
+            linkYoneticiEkrani.Text = "Yönetici Ekranı";
+            linkYoneticiEkrani.LinkClicked += linkYoneticiEkrani_LinkClicked;
             // 
             // txtKisiAra
             // 
-            this.txtKisiAra.Location = new System.Drawing.Point(325, 171);
-            this.txtKisiAra.Margin = new System.Windows.Forms.Padding(2);
-            this.txtKisiAra.Name = "txtKisiAra";
-            this.txtKisiAra.Size = new System.Drawing.Size(145, 23);
-            this.txtKisiAra.TabIndex = 10;
-            this.txtKisiAra.TextChanged += new System.EventHandler(this.txtKisiAra_TextChanged);
+            txtKisiAra.Location = new Point(325, 171);
+            txtKisiAra.Margin = new Padding(2);
+            txtKisiAra.Name = "txtKisiAra";
+            txtKisiAra.Size = new Size(145, 23);
+            txtKisiAra.TabIndex = 10;
+            txtKisiAra.TextChanged += txtKisiAra_TextChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(325, 153);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Kişi Ara";
+            label4.AutoSize = true;
+            label4.Location = new Point(325, 153);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Kişi Ara";
+            // 
+            // dgvKisi
+            // 
+            dgvKisi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKisi.Location = new Point(11, 387);
+            dgvKisi.Name = "dgvKisi";
+            dgvKisi.RowTemplate.Height = 25;
+            dgvKisi.Size = new Size(704, 179);
+            dgvKisi.TabIndex = 14;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(505, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 38);
+            button1.TabIndex = 15;
+            button1.Text = "İsme Göre Sıralama";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(505, 75);
+            button2.Name = "button2";
+            button2.Size = new Size(157, 32);
+            button2.TabIndex = 16;
+            button2.Text = "Eklenme Tarihine Göre";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 377);
-            this.Controls.Add(this.lvKisiler);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.linkYoneticiEkrani);
-            this.Controls.Add(this.txtKisiAra);
-            this.Controls.Add(this.label4);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(758, 657);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(dgvKisi);
+            Controls.Add(lvKisiler);
+            Controls.Add(groupBox1);
+            Controls.Add(linkYoneticiEkrani);
+            Controls.Add(txtKisiAra);
+            Controls.Add(label4);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            contextMenuStrip1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKisi).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -283,5 +313,8 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem silToolStripMenuItem;
         private ToolStripMenuItem adresToolStripMenuItem;
+        private DataGridView dgvKisi;
+        private Button button1;
+        private Button button2;
     }
 }

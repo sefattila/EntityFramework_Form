@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TelProject.DAL.Context;
@@ -54,6 +55,10 @@ namespace TelProject.DAL.Concretes
             //eager loading
             //lazy loading
             //Explicit
+        }
+        public List<Person> OrderByASC<TKey>(Expression<Func<Person, TKey>> expression)
+        {
+            return _dbContext.People.Where(x=>x.Status!=Status.Passive).OrderBy(expression).ToList();
         }
     }
 }

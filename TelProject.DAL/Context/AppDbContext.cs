@@ -17,7 +17,8 @@ namespace TelProject.DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
-            optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=TelProjectDB;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer("Server=KDK-403-PC13-YZ;Database=TelProjectDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-LAUF8V8;Database=TelProjectDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

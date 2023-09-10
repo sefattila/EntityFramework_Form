@@ -71,7 +71,7 @@ namespace TelProject.DAL.Migrations
                             Id = 1,
                             AddressDetail = "YeşilYurt",
                             City = "Kastamonu",
-                            CreateDate = new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(234),
+                            CreateDate = new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(567),
                             PersonId = 1,
                             Status = 0,
                             Town = "Tosya"
@@ -81,7 +81,7 @@ namespace TelProject.DAL.Migrations
                             Id = 2,
                             AddressDetail = "Karanfil",
                             City = "Ankara",
-                            CreateDate = new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(239),
+                            CreateDate = new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(570),
                             PersonId = 1,
                             Status = 0,
                             Town = "Gölbaşı"
@@ -91,7 +91,7 @@ namespace TelProject.DAL.Migrations
                             Id = 3,
                             AddressDetail = "Taşyaka",
                             City = "Muğla",
-                            CreateDate = new DateTime(2023, 9, 5, 10, 0, 34, 802, DateTimeKind.Local).AddTicks(241),
+                            CreateDate = new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(571),
                             PersonId = 2,
                             Status = 0,
                             Town = "Fethiye"
@@ -139,7 +139,7 @@ namespace TelProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2023, 9, 5, 10, 0, 34, 801, DateTimeKind.Local).AddTicks(9776),
+                            CreateDate = new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(315),
                             FirstName = "Sefa",
                             LastName = "Attila",
                             Phone = "552 828 1903",
@@ -148,7 +148,7 @@ namespace TelProject.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreateDate = new DateTime(2023, 9, 5, 10, 0, 34, 801, DateTimeKind.Local).AddTicks(9789),
+                            CreateDate = new DateTime(2023, 9, 10, 15, 56, 47, 875, DateTimeKind.Local).AddTicks(323),
                             FirstName = "Ahmet",
                             LastName = "Yılmaz",
                             Phone = "552 828 1903",

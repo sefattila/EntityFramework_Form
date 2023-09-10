@@ -19,6 +19,7 @@ namespace _4_EF_TelProject
             List<Person> persons = personServices.GetActive();
             FillList(persons);
             ButtonsSetting(true);
+
         }
 
         private void FillList(List<Person> persons)
@@ -135,6 +136,16 @@ namespace _4_EF_TelProject
             List<Person> filteredPerson = persons.Where(a => a.FirstName.ToLower().Contains(word) || a.FirstName.ToLower().Contains(word)).ToList();
 
             FillList(filteredPerson);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvKisi.DataSource = personServices.OrderBy(x => x.FirstName);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgvKisi.DataSource = personServices.OrderBy(x => x.CreateDate);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TelProject.DAL.Concretes;
@@ -32,7 +33,7 @@ namespace TelProject.BLL.Services
         public void Delete(Person person)
         {
             person.Status = Status.Passive;
-            person.DeletedDate= DateTime.Now;
+            person.DeletedDate = DateTime.Now;
             _personDAL.Update(person);
         }
 
@@ -49,6 +50,11 @@ namespace TelProject.BLL.Services
         public List<Person> GetActive()
         {
             return _personDAL.GetActive();
+        }
+
+        public List<Person> OrderBy<TKey>(Expression<Func<Person,TKey>> expression)
+        {
+            return _personDAL.OrderByASC(expression);
         }
     }
 }
